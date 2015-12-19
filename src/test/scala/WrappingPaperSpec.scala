@@ -15,7 +15,7 @@ class WrappingPaperSpec extends FunSpec {
     describe("a present with dimensions 2x3x4 (l x w x h") {
       it("requires 58 sq feet") {
         val present = XMasPresent("2x3x4")
-        assert(WrappingPaper.sqFeetFor(present) == 58)
+        assert(WrappingPaper.wrappingPaperFor(present) == 58)
       }
     }
   }
@@ -1037,7 +1037,7 @@ class WrappingPaperSpec extends FunSpec {
         |24x25x17
         |14x6x11""".stripMargin
 
-    assert(WrappingPaper.presentsFrom(input).map(WrappingPaper.sqFeetFor).sum == 1588178)
+    assert(WrappingPaper.presentsFrom(input).map(WrappingPaper.wrappingPaperFor).sum == 1588178)
     assert(WrappingPaper.presentsFrom(input).map(WrappingPaper.ribbonFor).sum == 3783758)
   }
 }

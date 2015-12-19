@@ -13,7 +13,7 @@ object WrappingPaper {
     ribbon + bow
   }
 
-  def sqFeetFor(present: XMasPresent) = {
+  def wrappingPaperFor(present: XMasPresent) = {
     val sides = List(
       present.length * present.width,
       present.width * present.height,
