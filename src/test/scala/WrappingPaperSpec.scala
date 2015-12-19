@@ -20,6 +20,11 @@ class WrappingPaperSpec extends FunSpec {
     }
   }
 
+  it("can calculate the amout of bow needed for a present") {
+    val present = XMasPresent("2x3x4")
+    assert(WrappingPaper.ribbonFor(present) == 34)
+  }
+
   describe("creating presents from a list of dimensions") {
     it("creates a present for each line") {
       val input = "2x3x4\n1x2x3"
@@ -29,7 +34,7 @@ class WrappingPaperSpec extends FunSpec {
     }
   }
 
-  it("can calculate the answer") {
+  it("can calculate the answer for wrapping paper and ribbon") {
     val input =
       """3x11x24
         |13x5x19
@@ -1033,5 +1038,6 @@ class WrappingPaperSpec extends FunSpec {
         |14x6x11""".stripMargin
 
     assert(WrappingPaper.presentsFrom(input).map(WrappingPaper.sqFeetFor).sum == 1588178)
+    assert(WrappingPaper.presentsFrom(input).map(WrappingPaper.ribbonFor).sum == 3783758)
   }
 }

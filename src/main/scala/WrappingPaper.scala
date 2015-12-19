@@ -3,6 +3,16 @@ object WrappingPaper {
     input.split("\n").map(XMasPresent.apply)
   }
 
+  def ribbonFor(present: XMasPresent) = {
+    val dimensions = List(present.height,present.width,present.length)
+    val smallestTwoDimensions = dimensions.sorted.take(2)
+    val ribbon = smallestTwoDimensions.sum  * 2
+
+    val bow = present.height * present.width * present.length
+
+    ribbon + bow
+  }
+
   def sqFeetFor(present: XMasPresent) = {
     val sides = List(
       present.length * present.width,
