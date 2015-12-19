@@ -1,6 +1,6 @@
 # Background 
 
-A skeleton project using ScalaTest, SBT and Scala 2.11.7.
+Solutions for Advent Of Code challenge.
 
 ## Running tests
 
